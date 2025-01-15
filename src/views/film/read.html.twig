@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du film{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-0 shadow rounded">
+                    <div class="card-header bg-dark text-white text-center py-4">
+                        <h1 class="h3">{{ film.title }}</h1>
+                        <p class="mb-0"><span class="badge bg-warning text-dark">{{ film.type }}</span></p>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Année :</strong> <span class="text-muted">{{ film.year }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Réalisateur :</strong> <span class="text-muted">{{ film.director }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Synopsis :</strong>
+                                <p class="text-muted mt-2">{{ film.synopsis }}</p>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ajouté le :</strong> <span class="text-muted">{{ film.createdAt.format('d/m/Y H:i') }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Modifié le :</strong> <span class="text-muted">{{ film.updatedAt.format('d/m/Y H:i') }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center bg-light py-3">
+                        <a href="/film/list" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-arrow-left"></i> Retour à la liste
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
